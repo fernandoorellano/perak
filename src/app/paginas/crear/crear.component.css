@@ -1,0 +1,19 @@
+.contenedor{
+    display: flex;
+    justify-content: center;
+}
+
+.row{
+    width: 50%;
+}
+
+.col{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid red;
+}
+
+input{
+    width: 180px;
+}

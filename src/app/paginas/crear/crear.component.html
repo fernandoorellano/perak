@@ -1,0 +1,28 @@
+<div class="contenedor">   
+    <div class="row">
+        <div class="col">
+            <p>Formulario de ingreso</p>
+                <form [formGroup]="loginForm" (ngSubmit)="onLogin()">
+                <input class="form-control"
+                    placeholder="Ingrese descripcion" 
+                    formControlName="descripcion">
+                <input class="form-control"
+                    placeholder="Ingrese fecha"
+                    formControlName="fecha">
+                <input class="form-control"
+                    placeholder="Ingrese numero pon" 
+                    formControlName="pon">
+                <input class="form-control"
+                    placeholder="Ingrese pago de Mayo" 
+                    formControlName="pagoMayo">
+                <input class="form-control"
+                    placeholder="Ingrese pago de Junio" 
+                    formControlName="pagoJunio">
+                <input class="form-control"
+                    placeholder="Ingrese pago de Julio" 
+                    formControlName="pagoJulio">
+                <button type="submit">Guardar</button>
+            </form>
+        </div>
+    </div>
+</div>

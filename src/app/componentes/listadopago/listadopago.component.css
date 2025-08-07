@@ -1,0 +1,31 @@
+.contenedor{
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin-bottom: 10px;
+}
+
+.fechas{
+    height: 30px;
+    overflow: auto;
+    border: 1px solid;
+}
+
+
+@media (min-width: 10px) and (max-width: 1400px) {
+    .row{
+        width: 100vw;
+        text-align: center;
+    }
+
+    .col{
+        width: 40vw;
+    }
+    .fechas{
+        width: 20vw;
+    }
+    .p{
+        font-size: 10px;
+    }
+}
