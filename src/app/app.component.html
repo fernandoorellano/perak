@@ -1,0 +1,94 @@
+<div class="contenedor">
+    <div class="row">
+        <div class="col col-1">
+             <p>ID</p>
+        </div>
+           <div class="col col-2">
+             <p>Descripcion</p>
+        </div>
+           <div class="col col-2">
+             <p>Fecha de inicio</p>
+        </div>
+          <div class="col col-1">
+             <p>PON</p>
+        </div>
+        <div class="col col-1">
+             <p>Mayo</p>
+        </div>
+         <div class="col col-1">
+             <p>Junio</p>
+        </div>
+        <div class="col col-1">
+             <p>Julio</p>
+        </div>
+        <div class="col col-1">
+             <p>Agost</p>
+        </div>
+          <div class="col col-1">
+             <p>Sept</p>
+        </div>
+        <div class="col col-1">
+             <p>Oct</p>
+        </div>
+        <div class="col col-1">
+             <p>NOV</p>
+        </div>
+        <div class="col col-1">
+             <p>Dic</p>
+        </div>
+        <!--<div class="col col-1">
+             <p>Guardar/Eliminar</p>
+        </div>-->
+    </div>
+</div>
+
+<div class="contenedor" *ngFor="let item of listadoFireServ.abonado">
+    <div class="row">
+        <div class="col col-1">
+            {{item.identificador}}
+        </div>
+          <div class="col col-2">
+            <input [(ngModel)]="item.descripcion" placeholder="Ingrese descripcion">
+        </div>
+        <div class="col col-2">
+            <input [(ngModel)]="item.fecha" placeholder="Ingrese fecha">
+        </div>
+        <div class="col col-1">
+            <input [(ngModel)]="item.pon">
+        </div>
+        <div class="col col-1">
+            <input [(ngModel)]="item.pagoMayo">
+        </div>
+        <div class="col col-1">
+            <input [(ngModel)]="item.pagoJunio">
+        </div>
+        <div class="col col-1">
+            <input [(ngModel)]="item.pagoJulio">
+        </div>
+        <div class="col col-1">
+            <input [(ngModel)]="item.pagoAgosto">
+        </div>
+        <div class="col col-1">
+            <input [(ngModel)]="item.pagoSeptiembre">
+        </div>
+        <div class="col col-1">
+            <input [(ngModel)]="item.pagoOctubre">
+        </div>
+        <div class="col col-1">
+            <input [(ngModel)]="item.pagoNoviembre">
+        </div>
+        <div class="col col-1">
+            <input [(ngModel)]="item.pagoDiciembre">
+        </div>
+        <!--<div class="col col-1">
+            <div class="btns">
+                <button (click)="listadoFireServ.update(item)">
+                   ok
+                </button>
+                <button (click)="listadoFireServ.deleteStuden(item)">
+                   x
+                </button>
+            </div>
+        </div>-->
+    </div>
+</div>
