@@ -1,0 +1,26 @@
+<div class="contenedor">   
+    <div class="row">
+        <div class="col">
+            <p>Formulario de ingreso</p>
+            <form [formGroup]="crearForm" (ngSubmit)="crearAbon()">
+                <input class="form-control"
+                    placeholder="Ingrese nro ID" 
+                    formControlName="identificador">
+                <input class="form-control"
+                    placeholder="Ingrese descripcion" 
+                    formControlName="descripcion">
+                <input class="form-control"
+                    placeholder="Ingrese numero celular" 
+                    formControlName="cel">
+                <input class="form-control"
+                    placeholder="Ingrese fecha EJ:(010225)"
+                    formControlName="fecha">
+                <input class="form-control"
+                    placeholder="Ingrese numero pon" 
+                    formControlName="pon">
+                <button type="submit">Guardar</button>
+                <span>{{mensajeCrear}}</span>
+            </form>
+        </div>
+    </div>
+</div>

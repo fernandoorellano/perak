@@ -1,0 +1,10 @@
+<div class="contenedor">
+    <div class="row">
+        <div class="col" *ngFor="let item of authServ.valores">
+            <p>Queres cambiar el nombre de usuario/contraseña?</p>
+            <p>Nuevo usuario:</p><input type="text" [(ngModel)]="item.usuario" placeholder="Ingrese nuevo valor">
+            <p>Nueva contraseña:</p><input type="password" [(ngModel)]="item.contrasena" placeholder="Ingrese nuevo valor">
+            <button (click)="authServ.actualizar(item)">Actualizar</button>
+        </div>
+    </div>
+</div>

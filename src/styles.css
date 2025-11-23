@@ -1,1 +1,23 @@
-/* You can add global styles to this file, and also import other style files */
+:root {
+    --bg-color:rgb(183, 180, 180);
+    --tx-sm: 11px;
+    --tx-smm: 12px;
+    --tx-m: 13px;
+    --tx-bg: 16px;
+}
+
+body{
+    background-color: rgb(244, 244, 244);
+}
+
+.par {
+  background-color:  rgb(215, 229, 215);
+}
+
+.impar {
+  background-color: rgb(255, 255, 255);
+}
+
+.pagoStyle{
+  background-color: var(--bg-color);
+}

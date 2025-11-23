@@ -1,0 +1,36 @@
+<div class="modal fade" id="datosModal" aria-hidden="false" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <span class="modal-title fs-5" id="exampleModalLabel">Edicion de datos</span>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="contenedor" *ngFor="let item of fireServ.datosAbonado">
+                <div class="row">
+                    <p><span>ID</span><input [(ngModel)]="item.identificador" placeholder="Ingrese identificador"></p>
+                    <p><span>Descripcion</span><input [(ngModel)]="item.descripcion" placeholder="Ingrese descripcion"></p>
+                    <p><span>Nro. celular</span><input [(ngModel)]="item.cel" placeholder="Ingrese celular"></p>
+                    <p><span>Fecha</span><input [(ngModel)]="item.fecha" placeholder="Ingrese fecha"></p>
+                    <p><span>Nro. pon</span><input [(ngModel)]="item.pon" placeholder="Ingrese valor"></p>
+                    <p><span>Pago de Enero</span><input [(ngModel)]="item.pagoEnero" placeholder="Ingrese valor"></p>
+                    <p><span>Pago de Febrero</span><input [(ngModel)]="item.pagoFebrero" placeholder="Ingrese valor"></p>
+                    <p><span>Pago de Marzo</span><input [(ngModel)]="item.pagoMarzo" placeholder="Ingrese valor"></p>
+                    <p><span>Pago de Abril</span><input [(ngModel)]="item.pagoAbril" placeholder="Ingrese valor"></p>
+                    <p><span>Pago de Mayo</span><input [(ngModel)]="item.pagoMayo" placeholder="Ingrese valor"></p>
+                    <p><span>Pago de Junio</span><input [(ngModel)]="item.pagoJunio" placeholder="Ingrese valor"></p>
+                    <p><span>Pago de Julio</span><input [(ngModel)]="item.pagoJulio" placeholder="Ingrese valor"></p>
+                    <p><span>Pago de Agosto</span><input [(ngModel)]="item.pagoAgosto" placeholder="Ingrese valor"></p>
+                    <p><span>Pago de Septiembre</span><input [(ngModel)]="item.pagoSeptiembre" placeholder="Ingrese valor"></p>
+                    <p><span>Pago de Octubre</span><input [(ngModel)]="item.pagoOctubre" placeholder="Ingrese valor"></p>
+                    <p><span>Pago de Noviembre</span><input [(ngModel)]="item.pagoNoviembre" placeholder="Ingrese valor"></p>
+                    <p><span>Pago de Diciembre</span><input [(ngModel)]="item.pagoDiciembre" placeholder="Ingrese valor"></p>
+                </div>
+                <div class="btnContenedor">
+                    <button class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                    <button class="btn btn-primary" data-bs-dismiss="modal" (click)="fireServ.actualizarPago(item)">Guardar</button>
+                    <button class="btn btn-danger" data-bs-dismiss="modal" (click)="fireServ.eliminar(item)">Eliminar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>

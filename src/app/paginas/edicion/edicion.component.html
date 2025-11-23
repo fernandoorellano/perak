@@ -1,0 +1,93 @@
+<app-listado-faltantes></app-listado-faltantes>
+<app-listado-actuales></app-listado-actuales>
+<div class="container" *ngIf="!fechaServ.mostrarDato">
+    <div class="contenedor">
+        <span>Cargando Datos ...</span>
+    </div>
+</div>
+
+<div class="container" *ngIf="fireServ.datosVacios">
+    <div class="contenedor">
+        <div class="row">
+            <div class="col col-1">
+                <p>&nbsp;</p>
+            </div>
+            <div class="col col-1">
+                <p><b>ID</b></p>
+            </div>
+            <div class="col col-3">
+                <p><b>Desc.</b></p>
+            </div>
+            <div class="col col-3">
+                <p><b>Celular</b></p>
+            </div>
+            <div class="col col-2">
+                <p><b>Fecha</b></p>
+            </div>
+            <div class="col col-1">
+                <p><b>PON</b></p>
+            </div>
+            <div class="col col-1">
+                <p><b>{{fechaServ.nombreMesAnterior}}</b></p>
+            </div>
+            <div class="col col-1">
+                <p><b>{{fechaServ.nombreMesActual}}</b></p>
+            </div>
+            <div class="col col-1">
+                <p>&nbsp;</p>
+            </div>
+            <div class="col col-1">
+                <p>&nbsp;</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="contenedor" *ngFor="let item of fireServ.abonados, index as index">
+        <div class="row" [ngClass]="{ 'par': index % 2 === 0 }">
+            <div class="col col-1">
+                <b>{{index+1}}</b>
+            </div>
+            <div class="col col-1">
+                {{item.identificador}}
+            </div>
+            <div class="col col-3">
+                <input [(ngModel)]="item.descripcion" placeholder="Ingrese descripcion">
+            </div>
+            <div class="col col-3">
+                <input [(ngModel)]="item.cel" placeholder="Ingrese celular">
+            </div>
+            <div class="col col-2">
+                <input [(ngModel)]="fechaServ.fechaNueva[index]" placeholder="Ingrese fecha">
+            </div>
+            <div class="col col-1">
+                <input [(ngModel)]="item.pon">
+            </div>
+            <div class="col col-1">
+                <input [(ngModel)]=fechaServ.valoresMesAnterior[index]>
+            </div>
+            <div class="col col-1">
+                <input [ngClass]="'pagoStyle'" [(ngModel)]="fechaServ.valoresMesActual[index]">
+            </div>
+            <div class="col col-1">
+                <button (click)="guardarDatos(item)" class="btnMas" data-bs-toggle="modal" data-bs-target="#datosModal">
+                +
+                </button>
+            </div>
+            <div class="col col-1">
+                <button class="btnSucces" (click)="fireServ.actualizar(item, fechaServ.fechaNueva[index])">
+                ok
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container" *ngIf="fechaServ.mostrarDato && !fireServ.datosVacios">
+    <div class="contenedor">
+        <b>Todavia no generaste datos</b>
+    </div>
+</div>
+
+<!-- Modal -->
+
+<app-modal></app-modal>

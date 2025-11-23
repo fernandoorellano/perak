@@ -1,0 +1,126 @@
+<div class="container" *ngIf="!fechaServ.mostrarDato">
+    <div class="contenedor">
+        <span>Cargando Datos ...</span>
+    </div>
+</div>
+
+<div class="container" *ngIf="fireServ.datosVacios">
+    <span>Listado de abonados</span>
+    <div class="contenedor">
+        <div class="row">
+            <div class="col col-2">
+                <p>&nbsp;</p>
+            </div>
+            <div class="col col-2">
+                <p><b>ID</b></p>
+            </div>
+            <div class="col col-4">
+                <p><b>Desc.</b></p>
+            </div>
+            <div class="col col-3">
+                <p><b>Fecha</b></p>
+            </div>
+            <div class="col col-1">
+                <p><b>PON</b></p>
+            </div>
+            <div class="col col-1">
+                <p><b>Ene.</b></p>
+            </div>
+            <div class="col col-1">
+                <p><b>Feb.</b></p>
+            </div>
+            <div class="col col-1">
+                <p><b>Mar.</b></p>
+            </div>
+            <div class="col col-1">
+                <p><b>Abr.</b></p>
+            </div>
+            <div class="col col-1">
+                <p><b>May.</b></p>
+            </div>
+            <div class="col col-1">
+                <p><b>Jun.</b></p>
+            </div>
+            <div class="col col-1">
+                <p><b>Jul.</b></p>
+            </div>
+            <div class="col col-1">
+                <p><b>Agost.</b></p>
+            </div>
+            <div class="col col-1">
+                <p><b>Sept.</b></p>
+            </div>
+            <div class="col col-1">
+                <p><b>Oct.</b></p>
+            </div>
+            <div class="col col-1">
+                <p><b>Nov.</b></p>
+            </div>
+            <div class="col col-1">
+                <p><b>Dic.</b></p>
+            </div>
+        </div>
+    </div>
+
+    <div class="contenedor" *ngFor="let item of fireServ.abonados, index as index" >
+        <div class="row" [ngClass]="{ 'par': index % 2 === 0, 'impar': index % 2 !== 0 }">
+            <div class="col col-2">
+                <span><b>{{index+1}}</b></span>
+            </div>
+            <div class="col col-2">
+                <span>{{item.identificador}}</span>
+            </div>
+            <div class="col col-4">
+                <span>{{item.descripcion}}</span>
+            </div>
+            <div class="col col-3">
+                <span>{{fechaServ.fechaNueva[index]}}</span>
+            </div>
+            <div class="col col-1">
+                <span>{{item.pon}}</span>
+            </div>
+            <div class="col col-1">
+                <span>{{item.pagoEnero}}</span>
+            </div>
+                <div class="col col-1">
+                <span>{{item.pagoFebrero}}</span>
+            </div>
+                <div class="col col-1">
+                <span>{{item.pagoMarzo}}</span>
+            </div>
+                <div class="col col-1">
+                <span>{{item.pagoAbril}}</span>
+            </div>
+                <div class="col col-1">
+                <span>{{item.pagoMayo}}</span>
+            </div>
+            <div class="col col-1">
+                <span>{{item.pagoJunio}}</span>
+            </div>
+            <div class="col col-1">
+                <span>{{item.pagoJulio}}</span>
+            </div>
+            <div class="col col-1">
+                <span>{{item.pagoAgosto}}</span>
+            </div>
+            <div class="col col-1">
+                <span>{{item.pagoSeptiembre}}</span>
+            </div>
+            <div class="col col-1">
+                <span>{{item.pagoOctubre}}</span>
+            </div>
+            <div class="col col-1">
+                <span>{{item.pagoNoviembre}}</span>
+            </div>
+            <div class="col col-1">
+                <span>{{item.pagoDiciembre}}</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container" *ngIf="fechaServ.mostrarDato && !fireServ.datosVacios">
+    <div class="contenedor">
+        <b>Todavia no generaste datos</b>
+    </div>
+</div>

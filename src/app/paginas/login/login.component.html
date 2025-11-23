@@ -1,0 +1,15 @@
+<div class="contenedor">
+        <div class="row">
+            <div class="col">
+                <form (ngSubmit)="onLogin()">
+                    <p><b>Todavia no iniciaste sesion</b></p>
+                    <p>Usuario:</p><input type="text" [(ngModel)]="usuario" placeholder="Ingrese usuario" [ngModelOptions]="{standalone: true}">
+                    <p>Contraseña:</p><input type="password" [(ngModel)]="contrasena" placeholder="Ingrese contraseña" [ngModelOptions]="{standalone: true}">
+                    <button type="submit" class="btnSucces">
+                    Iniciar sesion
+                    </button>
+                    <span>{{mensajeLogin}}</span>
+                </form>
+            </div>
+        </div>
+</div>
