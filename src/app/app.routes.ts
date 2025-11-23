@@ -11,7 +11,7 @@ export const routes: Routes = [
     {path: "",  redirectTo: "login", pathMatch: "full"},
     {path: "inicio", component: InicioComponent},
     {path: "edicion", canActivate: [VerificarGuard], component: EdicionComponent},
-    {path: "crear",  component: CrearComponent},
+    {path: "crear", canActivate: [VerificarGuard], component: CrearComponent},
     {path: "login", component: LoginComponent},
     {path: "controlpagos", canActivate: [VerificarGuard], component: ControlpagoComponent},
     {path: "miperfil", canActivate: [VerificarGuard], component: MiperfilComponent}
