@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg bg-body-tertiary">
     <div class="container-fluid">
-       <button class="navbar-brand btnLog" data-bs-toggle="collapse" data-bs-target="#navbarFtth" *ngIf="authServ.login; else login" (click)="logOut()">
+       <button class="navbar-brand btnLog" *ngIf="authServ.login; else login" (click)="logOut()">
           <span>Cerrar sesion</span>
       </button>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarFtth" aria-controls="navbarFtth" aria-expanded="false" aria-label="Toggle navigation">
@@ -27,7 +27,7 @@
       </div>
       
       <ng-template #login>
-        <button class="btnLog" routerLink="login" data-bs-toggle="collapse" data-bs-target="#navbarFtth">
+        <button class="btnLog" routerLink="login">
           <span>Iniciar sesion</span>
         </button>
       </ng-template>

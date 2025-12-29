@@ -63,7 +63,7 @@
                 <input [(ngModel)]="item.pon">
             </div>
             <div class="col col-1">
-                <input [(ngModel)]=fechaServ.valoresMesAnterior[index]>
+                <input [(ngModel)]="fechaServ.valoresMesAnterior[index]">
             </div>
             <div class="col col-1">
                 <input [ngClass]="'pagoStyle'" [(ngModel)]="fechaServ.valoresMesActual[index]">
@@ -74,7 +74,7 @@
                 </button>
             </div>
             <div class="col col-1">
-                <button class="btnSucces" (click)="fireServ.actualizar(item, fechaServ.fechaNueva[index])">
+                <button class="btnSucces" (click)="fireServ.actualizarDesdeBtnOk(item, fechaServ.fechaNueva[index], fechaServ.valoresMesAnterior[index], fechaServ.valoresMesActual[index])">
                 ok
                 </button>
             </div>

@@ -30,13 +30,8 @@
 
     constructor() {}
 
-    calculoDiaRestante(datos: any){
-      this.reiniciarCalculoDias()
-      for (let index = 0; index < datos.length; index++) {
-        
-        let diaNumerico = datos[index].fecha.slice(0, 2);
-
-        switch(this.fechaMesActualNumerica){
+    pagoMesAnteriorActual(index: any, datos: any){
+       switch(this.fechaMesActualNumerica){
           case 1:
             this.nombreMesAnterior = 'Dic.';
             this.nombreMesActual = 'Ene.';
@@ -110,7 +105,14 @@
             this.valoresMesAnterior.push(datos[index].pagoNoviembre);
           break;
         }
-        
+    }
+
+    calculoDiaRestante(datos: any){
+      this.reiniciarCalculoDias()
+      for (let index = 0; index < datos.length; index++) {
+        let diaNumerico = datos[index].fecha.slice(0, 2);
+        this.pagoMesAnteriorActual(index, datos);
+       
         this.fechaNueva[index] = datos[index].fecha.slice(0, 2)+'-'+datos[index].fecha.slice(2, 4)+"-"+datos[index].fecha.slice(4, 6)
         let resultadoDiferencia = diaNumerico - this.fechaDiaActualNumerica;
 
@@ -146,6 +148,59 @@
       this.valoresMesActual = [];
       this.valoresMesAnterior = [];
       this.btnWhatsapp = [];
+    }
+
+    cambioMesPago(datos: any, mesAnterior: any, mesActual: any){
+       switch(this.fechaMesActualNumerica){
+          case 1:
+            datos.pagoEnero = mesActual;
+            datos.pagoDiciembre = mesAnterior;
+          break;
+          case 2:
+            datos.pagoFebrero = mesActual;
+            datos.pagoEnero = mesAnterior;
+          break;
+          case 3:
+            datos.pagoMarzo = mesActual;
+            datos.pagoFebrero = mesAnterior;
+          break;
+          case 4:
+            datos.pagoAbril = mesActual;
+            datos.pagoMarzo = mesAnterior;
+          break;
+          case 5:
+            datos.pagoMayo = mesActual;
+            datos.pagoAbril = mesAnterior;
+          break;
+          case 6:
+            datos.pagoJunio = mesActual;
+            datos.pagoMayo = mesAnterior;
+          break;
+          case 7:
+            datos.pagoJulio = mesActual;
+            datos.pagoJunio = mesAnterior;
+          break;
+          case 8:
+            datos.pagoAgosto = mesActual;
+            datos.pagoJulio = mesAnterior;
+          break;
+          case 9:
+            datos.pagoSeptiembre = mesActual;
+            datos.pagoAgosto = mesAnterior;
+          break;
+          case 10:
+            datos.pagoOctubre = mesActual;
+            datos.pagoSeptiembre = mesAnterior;
+          break;
+          case 11:
+            datos.pagoNoviembre = mesActual;
+            datos.pagoOctubre = mesAnterior;
+          break;
+          case 12:
+            datos.pagoDiciembre = mesActual;
+            datos.pagoNoviembre = mesAnterior;
+          break;
+        }
     }
 
   }

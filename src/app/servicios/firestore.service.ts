@@ -41,18 +41,14 @@ export class FirestoreService {
     addDoc(coleccionRef, abonado);
   }
 
-  actualizar(abonado: any, fecha: any){
+  // actualizar desde btn OK en edicion
+  actualizarDesdeBtnOk(abonado: any, fecha: any, mesAnterior: any, mesActual: any){
+    this.fechaSer.cambioMesPago(abonado,mesAnterior, mesActual);
     const fechaNueva = fecha.slice(0, 2)+fecha.slice(3, 5)+fecha.slice(6, 8);
     abonado.fecha = fechaNueva;
     const coleccionRef = doc(this._firestore, environment.fireNombreColeccion, abonado.id);
     updateDoc(coleccionRef, abonado);
   }
-
-  // actualizar desde modal
-  // actualizarModal(abonado: any){
-  //   const coleccionRef = doc(this._firestore, environment.fireNombreColeccion, abonado.id);
-  //   updateDoc(coleccionRef, abonado);
-  // }
 
   // actualizar pago
   actualizarPago(abonado: any){

@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { InicioComponent } from './paginas/inicio/inicio.component';
 import { NavbarComponent } from './componentes/navbar/navbar.component';
+import { FirestoreService } from './servicios/firestore.service';
 
 @Component({
   selector: 'app-root',
@@ -12,4 +13,11 @@ import { NavbarComponent } from './componentes/navbar/navbar.component';
 })
 export class AppComponent {
   title = 'perak';
+
+     constructor(public fireServ : FirestoreService) { }
+     
+    ngOnInit(): void {
+      this.fireServ.obtenerDatos()
+    }
+
 }

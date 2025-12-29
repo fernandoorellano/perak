@@ -21,7 +21,7 @@ export class EdicionComponent {
    constructor(public fireServ : FirestoreService, public fechaServ: FechaService, public authServ: AuthService) { }
    
   ngOnInit(): void {
-    this.fireServ.obtenerDatos()
+    // this.fireServ.obtenerDatos()
   }
 
   guardarDatos(datos: any){
