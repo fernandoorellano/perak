@@ -1,0 +1,174 @@
+.container{
+    height: 55vh;
+    overflow: auto;
+}
+
+.contenedor{
+    display: flex;
+    justify-content: center;
+    align-items:center;
+}
+
+.row{
+    display: flex;
+    justify-content: center;
+    width: 60vw;
+}
+
+.row.par{
+    width: 60vw;
+}
+
+.col{
+    display: flex;
+    border: 1px solid rgb(162, 162, 162);
+    justify-content: center;
+    padding: 0;
+}
+
+.col span{
+    width: 100%;
+    text-align: center;
+}
+
+.col-1{
+    width: 4vw;
+}
+
+.col-2{
+    width: 7vw;
+}
+
+.col-3{
+    width: 11vw;
+}
+
+.col-4{
+    width: 11vw;
+}
+
+p{
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+
+.whats{
+    border: none;
+    font-weight: 800;
+    width: 20px;
+    padding: 0;
+    background-color: transparent;
+}
+
+svg{
+    border: none;
+    height: 17px;
+    width: 17px;
+}
+
+.success{
+    background-color: rgb(52, 207, 88);
+    color: aliceblue;
+    border: none;
+    font-weight: 800;
+}
+
+.danger{
+    background-color: rgb(255, 80, 80);
+    color: aliceblue;
+    border: none;
+    font-weight: 700;
+}
+
+@media (min-width:761px) and (max-width: 900px){
+    .row, .row.par{
+        width: 80vw;
+    }
+
+    .col-1{
+        width: 6vw;
+    }
+
+    .col-2{
+        width: 9vw;
+    }
+
+    .col-3{
+        width: 13vw;
+    }
+
+    .col-4{
+        width: 13vw;
+    }
+
+    p{
+        writing-mode: vertical-lr;
+    }
+
+}
+
+@media (min-width:570px) and (max-width: 760px){
+
+    .row, .row.par{
+        width: 71vw;
+    }
+
+    .col-1{
+        width: 4vw;
+    }
+
+    .col-2{
+        width: 5vw;
+    }
+
+    .col-3{
+        width: 20vw;
+    }
+
+    .col-4{
+        width: 17vw;
+    }
+
+    p{
+        writing-mode: vertical-lr;
+    }
+}
+
+@media (min-width:200px) and (max-width: 569px){
+    .row, .row.par{
+        width: 87vw;
+    }
+
+    b{
+        padding: 3px;
+    }
+    
+    .col-1{
+        width: 6vw;
+        font-size: var(--tx-m);
+    }
+
+    .col-2{
+        width: 6vw;
+    }
+
+    .col-3{
+        width: 21vw;
+    }
+
+    .col-4{
+        width: 18vw;
+    }
+    
+    p{
+        writing-mode: vertical-lr;
+        font-size: var(--tx-m);
+    }
+
+    span{
+        font-size: var(--tx-m);
+    }
+}

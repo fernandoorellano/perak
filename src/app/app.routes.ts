@@ -6,13 +6,15 @@ import { InicioComponent } from './paginas/inicio/inicio.component';
 import { LoginComponent } from './paginas/login/login.component';
 import { MiperfilComponent } from './paginas/miperfil/miperfil.component';
 import { VerificarGuard } from './guard/verificar.guard';
+import { InfoabonadosComponent } from './paginas/infoabonados/infoabonados.component';
 
 export const routes: Routes = [
     {path: "",  redirectTo: "login", pathMatch: "full"},
     {path: "inicio", component: InicioComponent},
     {path: "edicion", canActivate: [VerificarGuard], component: EdicionComponent},
+    {path: "infoabonados", component: InfoabonadosComponent},
     {path: "crear", canActivate: [VerificarGuard], component: CrearComponent},
     {path: "login", component: LoginComponent},
-    {path: "controlpagos", canActivate: [VerificarGuard], component: ControlpagoComponent},
+    {path: "controlpagos", component: ControlpagoComponent},
     {path: "miperfil", canActivate: [VerificarGuard], component: MiperfilComponent}
 ];

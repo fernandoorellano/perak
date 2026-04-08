@@ -62,13 +62,14 @@ export class ListadofireService {
           if(abonado.pagoMarzo != 'p' && abonado.pagoMarzo != 'P'){
               abonado.pagoMarzo = pago;
             }else
-            {abonado.pagoMayo = pago;}
+            {
+              abonado.pagoAbril = pago;}
           break;
         case 5:
-          if(abonado.pagoMayo != 'p' && abonado.pagoMayo != 'P'){
-              abonado.pagoMayo = pago;
+          if(abonado.pagoAbril != 'p' && abonado.pagoAbril != 'P'){
+              abonado.pagoAbril = pago;
             }else
-            {abonado.pagoJunio = pago;}
+            {abonado.pagoMayo = pago;}
           break;
         case 6:
           if(abonado.pagoMayo != 'p' && abonado.pagoMayo != 'P'){
