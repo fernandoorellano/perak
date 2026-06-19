@@ -1,10 +1,11 @@
 <app-listado-faltantes></app-listado-faltantes>
 <app-listado-actuales></app-listado-actuales>
-<div class="container" *ngIf="!fechaServ.mostrarDato">
+<div class="container" *ngIf="!fechaServ.mostrarDato && !fireServ.datosVacios">
     <div class="contenedor">
-        <span>Cargando Datos ...</span>
+        <span>Cargando datos...</span>
     </div>
 </div>
+
 
 <div class="container" *ngIf="fireServ.datosVacios">
     <div class="contenedor">
@@ -82,11 +83,17 @@
     </div>
 </div>
 
-<div class="container" *ngIf="fechaServ.mostrarDato && !fireServ.datosVacios">
+<div class="container" *ngIf="fechaServ.mostrarDato && !fireServ.datosVacios && fireServ.msgAct">
     <div class="contenedor">
         <b>Todavia no generaste datos</b>
     </div>
 </div>
+
+<!-- <div class="container" *ngIf="fechaServ.mostrarDato && !fireServ.datosVacios && !fireServ.msgAct">
+    <div class="contenedor">
+        <b>ACTUALIZANDO....</b>
+    </div>
+</div> -->
 
 <!-- Modal -->
 

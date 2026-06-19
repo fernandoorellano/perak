@@ -12,9 +12,9 @@ export const routes: Routes = [
     {path: "",  redirectTo: "login", pathMatch: "full"},
     {path: "inicio", component: InicioComponent},
     {path: "edicion", canActivate: [VerificarGuard], component: EdicionComponent},
-    {path: "infoabonados", component: InfoabonadosComponent},
+    // {path: "infoabonados", component: InfoabonadosComponent},
     {path: "crear", canActivate: [VerificarGuard], component: CrearComponent},
     {path: "login", component: LoginComponent},
-    {path: "controlpagos", canActivate: [VerificarGuard], component: ControlpagoComponent},
+    {path: "controlpagos", component: ControlpagoComponent},
     {path: "miperfil", canActivate: [VerificarGuard], component: MiperfilComponent}
 ];

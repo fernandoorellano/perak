@@ -24,6 +24,7 @@
     border: 1px solid rgb(162, 162, 162);
     justify-content: center;
     padding: 0;
+    min-height: 32px;
 }
 
 .col span{
@@ -139,7 +140,7 @@ svg{
 
 @media (min-width:200px) and (max-width: 569px){
     .row, .row.par{
-        width: 87vw;
+        width: 83vw;
     }
 
     b{
@@ -147,12 +148,12 @@ svg{
     }
     
     .col-1{
-        width: 6vw;
+        width: 5vw;
         font-size: var(--tx-m);
     }
 
     .col-2{
-        width: 6vw;
+        width: 7vw;
     }
 
     .col-3{

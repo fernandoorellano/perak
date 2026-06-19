@@ -15,6 +15,7 @@ export class FirestoreService {
   abonados!: Abonado[];
   datosAbonado: any;
   datosVacios = false;
+  msgAct = false;
 
   constructor(public fechaSer: FechaService) {}
 
@@ -30,6 +31,7 @@ export class FirestoreService {
         this.datosVacios = false;
       }else{
         this.datosVacios = true;
+        this.msgAct = !this.msgAct;
       }
       this.fechaSer.calculoDiaRestante(this.abonados);
     });
@@ -44,10 +46,19 @@ export class FirestoreService {
   // actualizar desde btn OK en edicion
   actualizarDesdeBtnOk(abonado: any, fecha: any, mesAnterior: any, mesActual: any){
     this.fechaSer.cambioMesPago(abonado,mesAnterior, mesActual);
+    const nuevaDesc = abonado.descripcion;
+    abonado.descripcion = nuevaDesc;
     const fechaNueva = fecha.slice(0, 2)+fecha.slice(3, 5)+fecha.slice(6, 8);
     abonado.fecha = fechaNueva;
+    const celNuevo = abonado.cel;
+    abonado.cel = celNuevo;
     const coleccionRef = doc(this._firestore, environment.fireNombreColeccion, abonado.id);
     updateDoc(coleccionRef, abonado);
+    
+    // this.fechaSer.mostrarDato = false
+    // this.datosVacios = !this.datosVacios;
+    // this.fechaSer.mensajePagoAnteriores = "";
+    
   }
 
   // actualizar pago
