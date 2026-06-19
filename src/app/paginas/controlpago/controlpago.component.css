@@ -143,6 +143,10 @@ svg{
         width: 83vw;
     }
 
+    .col{
+        min-height: 32px;
+    }
+
     b{
         padding: 3px;
     }
