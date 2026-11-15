@@ -22,21 +22,18 @@
                 <p><b>Fecha</b></p>
             </div>
             <div class="col col-1">
-                <p><b>PON</b></p>
-            </div>
-            <div class="col col-1">
                 <p><b>{{fechaServ.nombreMesAnterior}}</b></p>
             </div>
             <div class="col col-1">
                 <p><b>{{fechaServ.nombreMesActual}}</b></p>
             </div>
-            <div class="col col-1">
+            <div class="col col-2">
                 <p>&nbsp;</p>
             </div>
-            <div class="col col-1">
+            <div class="col col-2">
                 <p>&nbsp;</p>
             </div>
-            <div class="col col-1">
+            <div class="col col-2">
                 <p>&nbsp;</p>
             </div>
         </div>
@@ -57,15 +54,12 @@
                 <span>{{fechaServ.fechaNueva[index]}}</span>
             </div>
             <div class="col col-1">
-                <span>{{item.pon}}</span>
-            </div>
-            <div class="col col-1">
                 <span>{{fechaServ.valoresMesAnterior[index]}}</span>
             </div>
             <div class="col col-1">
                 <span [ngClass]="'pagoStyle'">{{fechaServ.valoresMesActual[index]}}</span>
             </div>
-            <div class="col col-1">
+            <div class="col col-2">
                 <div *ngIf="fechaServ.btnWhatsapp[index]">
                     <button class="whats" (click)="enviarMensaje(item.cel)">
                         <svg xmlns="http://www.w3.org/2000/svg" class="bi bi-whatsapp" viewBox="0 0 16 16">
@@ -74,12 +68,12 @@
                     </button>
                 </div>
             </div>
-            <div class="col col-1">
+            <div class="col col-2">
                 <button (click)="listadoFireServ.actualizarMesPago('P', item)" class="success">
                 P
                 </button>
             </div>
-            <div class="col col-1">
+            <div class="col col-2">
                 <button (click)="listadoFireServ.actualizarMesPago('', item)" class="danger">
                 X
                 </button>

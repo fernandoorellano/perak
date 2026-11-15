@@ -105,7 +105,17 @@ export class ListadofireService {
             if(abonado.pagoOctubre != 'p' && abonado.pagoOctubre != 'P'){
               abonado.pagoOctubre = pago;
             }else
-            {abonado.pagoNoviembre = pago;}
+            { abonado.pagoNoviembre = pago;
+              abonado.pagoDiciembre = '';
+              abonado.pagoEnero = '';
+              abonado.pagoFebrero = '';
+              abonado.pagoMarzo = '';
+              abonado.pagoAbril = '';
+              abonado.pagoMayo = '';
+              abonado.pagoJunio = '';
+              abonado.pagoJulio = '';
+              abonado.pagoAgosto = '';
+              abonado.pagoSeptiembre = '';}
         break;
         case 12:
             if(abonado.pagoNoviembre != 'p' && abonado.pagoNoviembre != 'P'){
